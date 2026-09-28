@@ -1,0 +1,1811 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kenoue Landry | Graphic Designer</title>
+
+    <meta name="description" content="Portfolio de Kenoue Landry, designer graphique spécialisé en identité visuelle, branding, communication visuelle et création graphique.">
+
+    <style>
+
+        /* ==============================
+           CONFIGURATION GÉNÉRALE
+        ============================== */
+
+        :root {
+            --background: #0a0a0a;
+            --background-2: #111111;
+            --card: #171717;
+            --white: #ffffff;
+            --text: #b5b5b5;
+            --accent: #ff5c35;
+            --accent-hover: #ff7958;
+            --border: rgba(255,255,255,0.09);
+            --max-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--background);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: var(--max-width);
+            margin: auto;
+        }
+
+
+        /* ==============================
+           HEADER
+        ============================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            z-index: 1000;
+
+            background: rgba(10,10,10,0.90);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav {
+            height: 80px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            list-style: none;
+
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        nav a {
+            color: #dddddd;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .menu-btn {
+            display: none;
+
+            border: none;
+            background: transparent;
+            color: white;
+
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+
+        /* ==============================
+           HERO
+        ============================== */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding-top: 100px;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            width: 550px;
+            height: 550px;
+
+            right: -200px;
+            top: 80px;
+
+            background: var(--accent);
+
+            opacity: 0.10;
+
+            filter: blur(130px);
+
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            max-width: 900px;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .small-title {
+            color: var(--accent);
+
+            text-transform: uppercase;
+
+            letter-spacing: 4px;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 100px);
+
+            line-height: 0.95;
+
+            letter-spacing: -5px;
+
+            margin-bottom: 30px;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            max-width: 680px;
+
+            color: var(--text);
+
+            font-size: 19px;
+
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 15px 25px;
+
+            border-radius: 5px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 1px solid #444;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+
+        /* ==============================
+           SECTIONS
+        ============================== */
+
+        section {
+            padding: 110px 0;
+        }
+
+        .section-title {
+            margin-bottom: 55px;
+        }
+
+        .section-title small {
+            color: var(--accent);
+
+            text-transform: uppercase;
+
+            letter-spacing: 3px;
+
+            font-size: 12px;
+
+            font-weight: bold;
+        }
+
+        .section-title h2 {
+            font-size: clamp(36px, 5vw, 60px);
+
+            line-height: 1;
+
+            margin-top: 12px;
+
+            letter-spacing: -2px;
+        }
+
+        .section-title p {
+            max-width: 650px;
+
+            color: var(--text);
+
+            margin-top: 18px;
+        }
+
+
+        /* ==============================
+           À PROPOS
+        ============================== */
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .about-text p {
+            color: var(--text);
+
+            font-size: 17px;
+
+            margin-bottom: 20px;
+        }
+
+        .about-text strong {
+            color: white;
+        }
+
+        .about-boxes {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 15px;
+        }
+
+        .about-box {
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            padding: 30px;
+
+            border-radius: 10px;
+        }
+
+        .about-box h3 {
+            color: var(--accent);
+
+            font-size: 32px;
+
+            margin-bottom: 5px;
+        }
+
+        .about-box p {
+            color: var(--text);
+
+            font-size: 14px;
+        }
+
+
+        /* ==============================
+           SERVICES
+        ============================== */
+
+        .services-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .service {
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            padding: 35px;
+
+            border-radius: 10px;
+
+            transition: 0.3s;
+        }
+
+        .service:hover {
+            transform: translateY(-8px);
+
+            border-color: var(--accent);
+        }
+
+        .service-number {
+            color: var(--accent);
+
+            font-size: 14px;
+
+            font-weight: bold;
+        }
+
+        .service h3 {
+            font-size: 23px;
+
+            margin: 25px 0 12px;
+        }
+
+        .service p {
+            color: var(--text);
+
+            font-size: 15px;
+        }
+
+
+        /* ==============================
+           PORTFOLIO
+        ============================== */
+
+        .filters {
+            display: flex;
+
+            gap: 10px;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 30px;
+        }
+
+        .filter-btn {
+            background: transparent;
+
+            color: #aaa;
+
+            border: 1px solid #333;
+
+            padding: 10px 18px;
+
+            border-radius: 30px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--accent);
+
+            color: white;
+
+            border-color: var(--accent);
+        }
+
+        .portfolio-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .project {
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-6px);
+        }
+
+        .project-image {
+            height: 280px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #252525,
+                    #111111
+                );
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .project-placeholder {
+            font-size: 60px;
+
+            color: #444;
+        }
+
+        .project-info {
+            padding: 22px;
+        }
+
+        .project-info small {
+            color: var(--accent);
+
+            text-transform: uppercase;
+
+            font-size: 11px;
+
+            letter-spacing: 1px;
+        }
+
+        .project-info h3 {
+            margin-top: 6px;
+
+            font-size: 20px;
+        }
+
+
+        /* ==============================
+           COMPÉTENCES
+        ============================== */
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 50px;
+        }
+
+        .skill {
+            margin-bottom: 25px;
+        }
+
+        .skill-top {
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-bottom: 8px;
+        }
+
+        .skill-top span:last-child {
+            color: var(--accent);
+        }
+
+        .progress {
+            height: 5px;
+
+            background: #222;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+        }
+
+        .progress span {
+            display: block;
+
+            height: 100%;
+
+            background: var(--accent);
+        }
+
+
+        /* ==============================
+           CONTACT
+        ============================== */
+
+        .contact-box {
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            padding: 60px;
+
+            border-radius: 15px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 60px;
+        }
+
+        .contact-box h2 {
+            font-size: 45px;
+
+            line-height: 1;
+
+            margin-bottom: 20px;
+        }
+
+        .contact-box p {
+            color: var(--text);
+        }
+
+        .contact-info {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 20px;
+        }
+
+        .contact-item {
+            border-bottom: 1px solid #292929;
+
+            padding-bottom: 15px;
+        }
+
+        .contact-item small {
+            display: block;
+
+            color: var(--accent);
+
+            margin-bottom: 4px;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent);
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        footer {
+            border-top: 1px solid var(--border);
+
+            padding: 30px 0;
+
+            color: #777;
+
+            font-size: 14px;
+        }
+
+        .footer-content {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+        }
+
+
+        /* ==============================
+           WHATSAPP
+        ============================== */
+
+        .whatsapp {
+            position: fixed;
+
+            right: 25px;
+            bottom: 25px;
+
+            width: 58px;
+            height: 58px;
+
+            border-radius: 50%;
+
+            background: #25D366;
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 25px;
+
+            z-index: 999;
+
+            box-shadow: 0 5px 25px rgba(0,0,0,0.4);
+
+            transition: 0.3s;
+        }
+
+        .whatsapp:hover {
+            transform: scale(1.1);
+        }
+
+
+        /* ==============================
+           RESPONSIVE
+        ============================== */
+
+        @media (max-width: 900px) {
+
+            nav ul {
+                display: none;
+
+                position: absolute;
+
+                top: 80px;
+                left: 0;
+
+                width: 100%;
+
+                background: #0a0a0a;
+
+                flex-direction: column;
+
+                padding: 25px;
+
+                border-bottom: 1px solid var(--border);
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .about-grid,
+            .skills-grid,
+            .contact-box {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            header {
+                height: 70px;
+            }
+
+            .nav {
+                height: 70px;
+            }
+
+            nav ul {
+                top: 70px;
+            }
+
+            .hero {
+                padding-top: 100px;
+            }
+
+            .hero h1 {
+                letter-spacing: -3px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+
+            .services-grid,
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-boxes {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact-box {
+                padding: 30px;
+            }
+
+            .contact-box h2 {
+                font-size: 35px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- ==============================
+     MENU
+============================== -->
+
+<header>
+
+    <div class="container nav">
+
+        <a href="#accueil" class="logo">
+            KEN<span>.</span>
+        </a>
+
+        <nav>
+
+            <ul id="nav-menu">
+
+                <li>
+                    <a href="#accueil">Accueil</a>
+                </li>
+
+                <li>
+                    <a href="#apropos">À propos</a>
+                </li>
+
+                <li>
+                    <a href="#services">Services</a>
+                </li>
+
+                <li>
+                    <a href="#portfolio">Portfolio</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+        <button
+            class="menu-btn"
+            onclick="toggleMenu()"
+            aria-label="Ouvrir le menu"
+        >
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- ==============================
+     ACCUEIL
+============================== -->
+
+<section class="hero" id="accueil">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="small-title">
+                Graphic Designer
+            </div>
+
+            <h1>
+                Kenoue<br>
+                <span>Landry.</span>
+            </h1>
+
+            <p>
+                Je transforme les idées en identités visuelles
+                fortes, modernes et professionnelles.
+                Je crée des designs qui donnent de la valeur
+                aux marques et aux entreprises.
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    href="#portfolio"
+                    class="btn btn-primary"
+                >
+                    Voir mes projets
+                </a>
+
+                <a
+                    href="#contact"
+                    class="btn btn-outline"
+                >
+                    Me contacter
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==============================
+     À PROPOS
+============================== -->
+
+<section id="apropos">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>À propos de moi</small>
+
+            <h2>
+                Qui suis-je ?
+            </h2>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+                    Je suis
+                    <strong>Kenoue Landry</strong>,
+                    designer graphique passionné par la création
+                    visuelle et la communication des marques.
+                </p>
+
+                <p>
+                    Je transforme les idées en créations graphiques
+                    modernes, professionnelles et adaptées aux
+                    besoins de chaque projet.
+                </p>
+
+                <p>
+                    Mon travail comprend notamment la création de
+                    logos, l'identité visuelle, le branding,
+                    les affiches, flyers, visuels pour réseaux sociaux,
+                    mockups et supports destinés à l'impression.
+                </p>
+
+            </div>
+
+
+            <div class="about-boxes">
+
+                <div class="about-box">
+
+                    <h3>+</h3>
+
+                    <p>
+                        Créativité
+                    </p>
+
+                </div>
+
+
+                <div class="about-box">
+
+                    <h3>+</h3>
+
+                    <p>
+                        Design moderne
+                    </p>
+
+                </div>
+
+
+                <div class="about-box">
+
+                    <h3>+</h3>
+
+                    <p>
+                        Identité visuelle
+                    </p>
+
+                </div>
+
+
+                <div class="about-box">
+
+                    <h3>+</h3>
+
+                    <p>
+                        Communication visuelle
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==============================
+     SERVICES
+============================== -->
+
+<section id="services">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>Mon expertise</small>
+
+            <h2>
+                Mes services
+            </h2>
+
+            <p>
+                Des solutions graphiques conçues pour aider
+                les marques et entreprises à développer une
+                image professionnelle.
+            </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+
+            <div class="service">
+
+                <div class="service-number">
+                    01
+                </div>
+
+                <h3>
+                    Logo & Identité visuelle
+                </h3>
+
+                <p>
+                    Création de logos professionnels et
+                    développement d'identités visuelles cohérentes
+                    pour les marques.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-number">
+                    02
+                </div>
+
+                <h3>
+                    Branding
+                </h3>
+
+                <p>
+                    Création d'univers graphiques permettant
+                    à une entreprise de construire une image
+                    reconnaissable et mémorable.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-number">
+                    03
+                </div>
+
+                <h3>
+                    Design publicitaire
+                </h3>
+
+                <p>
+                    Création de flyers, affiches, affiches
+                    publicitaires, promotions et supports
+                    de communication.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-number">
+                    04
+                </div>
+
+                <h3>
+                    Réseaux sociaux
+                </h3>
+
+                <p>
+                    Création de visuels professionnels pour
+                    Facebook, Instagram, TikTok et autres
+                    plateformes.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-number">
+                    05
+                </div>
+
+                <h3>
+                    Mockups
+                </h3>
+
+                <p>
+                    Présentation réaliste des logos et identités
+                    visuelles sur différents supports.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <div class="service-number">
+                    06
+                </div>
+
+                <h3>
+                    Préparation impression
+                </h3>
+
+                <p>
+                    Préparation de fichiers adaptés à l'impression
+                    sur différents supports et formats.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==============================
+     PORTFOLIO
+============================== -->
+
+<section id="portfolio">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>Mes réalisations</small>
+
+            <h2>
+                Portfolio
+            </h2>
+
+            <p>
+                Une sélection de mes projets graphiques.
+            </p>
+
+        </div>
+
+
+        <!-- FILTRES -->
+
+        <div class="filters">
+
+            <button
+                class="filter-btn active"
+                onclick="filterProjects('all', this)"
+            >
+                Tous
+            </button>
+
+            <button
+                class="filter-btn"
+                onclick="filterProjects('logo', this)"
+            >
+                Logos
+            </button>
+
+            <button
+                class="filter-btn"
+                onclick="filterProjects('branding', this)"
+            >
+                Branding
+            </button>
+
+            <button
+                class="filter-btn"
+                onclick="filterProjects('publicite', this)"
+            >
+                Publicité
+            </button>
+
+            <button
+                class="filter-btn"
+                onclick="filterProjects('social', this)"
+            >
+                Réseaux sociaux
+            </button>
+
+        </div>
+
+
+        <!-- PROJETS -->
+
+        <div class="portfolio-grid">
+
+
+            <div
+                class="project"
+                data-category="logo"
+            >
+
+                <div class="project-image">
+
+                    <div class="project-placeholder">
+                        +
+                    </div>
+
+                </div>
+
+                <div class="project-info">
+
+                    <small>
+                        Logo
+                    </small>
+
+                    <h3>
+                        Création de logo
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="project"
+                data-category="branding"
+            >
+
+                <div class="project-image">
+
+                    <div class="project-placeholder">
+                        +
+                    </div>
+
+                </div>
+
+                <div class="project-info">
+
+                    <small>
+                        Branding
+                    </small>
+
+                    <h3>
+                        Identité de marque
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="project"
+                data-category="publicite"
+            >
+
+                <div class="project-image">
+
+                    <div class="project-placeholder">
+                        +
+                    </div>
+
+                </div>
+
+                <div class="project-info">
+
+                    <small>
+                        Publicité
+                    </small>
+
+                    <h3>
+                        Affiche publicitaire
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="project"
+                data-category="social"
+            >
+
+                <div class="project-image">
+
+                    <div class="project-placeholder">
+                        +
+                    </div>
+
+                </div>
+
+                <div class="project-info">
+
+                    <small>
+                        Social Media
+                    </small>
+
+                    <h3>
+                        Design réseaux sociaux
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="project"
+                data-category="branding"
+            >
+
+                <div class="project-image">
+
+                    <div class="project-placeholder">
+                        +
+                    </div>
+
+                </div>
+
+                <div class="project-info">
+
+                    <small>
+                        Branding
+                    </small>
+
+                    <h3>
+                        Application de marque
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+
+            <div
+                class="project"
+                data-category="logo"
+            >
+
+                <div class="project-image">
+
+                    <div class="project-placeholder">
+                        +
+                    </div>
+
+                </div>
+
+                <div class="project-info">
+
+                    <small>
+                        Logo
+                    </small>
+
+                    <h3>
+                        Identité graphique
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==============================
+     COMPÉTENCES
+============================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <small>Mon savoir-faire</small>
+
+            <h2>
+                Compétences
+            </h2>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+
+            <div>
+
+
+                <div class="skill">
+
+                    <div class="skill-top">
+
+                        <span>
+                            Design graphique
+                        </span>
+
+                        <span>
+                            95%
+                        </span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <span style="width:95%;"></span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="skill">
+
+                    <div class="skill-top">
+
+                        <span>
+                            Création de logo
+                        </span>
+
+                        <span>
+                            95%
+                        </span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <span style="width:95%;"></span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="skill">
+
+                    <div class="skill-top">
+
+                        <span>
+                            Branding
+                        </span>
+
+                        <span>
+                            90%
+                        </span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <span style="width:90%;"></span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div>
+
+
+                <div class="skill">
+
+                    <div class="skill-top">
+
+                        <span>
+                            Communication visuelle
+                        </span>
+
+                        <span>
+                            90%
+                        </span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <span style="width:90%;"></span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="skill">
+
+                    <div class="skill-top">
+
+                        <span>
+                            Design réseaux sociaux
+                        </span>
+
+                        <span>
+                            90%
+                        </span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <span style="width:90%;"></span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="skill">
+
+                    <div class="skill-top">
+
+                        <span>
+                            Préparation impression
+                        </span>
+
+                        <span>
+                            95%
+                        </span>
+
+                    </div>
+
+                    <div class="progress">
+
+                        <span style="width:95%;"></span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==============================
+     CONTACT
+============================== -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+
+            <div>
+
+                <div class="small-title">
+                    Parlons de votre projet
+                </div>
+
+                <h2>
+                    Une idée ?
+                    Créons-la ensemble.
+                </h2>
+
+                <p>
+                    Vous avez besoin d'un logo, d'une identité
+                    visuelle, d'un flyer ou d'un visuel publicitaire ?
+                    Contactez-moi pour discuter de votre projet.
+                </p>
+
+            </div>
+
+
+
+            <div class="contact-info">
+
+
+                <!-- WHATSAPP -->
+
+                <div class="contact-item">
+
+                    <small>
+                        WhatsApp
+                    </small>
+
+                    <a
+                        href="https://wa.me/237680523125"
+                        target="_blank"
+                    >
+                        +237 680 523 125
+                    </a>
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="contact-item">
+
+                    <small>
+                        Email
+                    </small>
+
+                    <a
+                        href="mailto:Kenouelandry@gmail.com"
+                    >
+                        Kenouelandry@gmail.com
+                    </a>
+
+                </div>
+
+
+                <!-- LOCALISATION -->
+
+                <div class="contact-item">
+
+                    <small>
+                        Localisation
+                    </small>
+
+                    Douala, Cameroun
+
+                </div>
+
+
+                <!-- NOM -->
+
+                <div class="contact-item">
+
+                    <small>
+                        Designer
+                    </small>
+
+                    Kenoue Landry
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==============================
+     FOOTER
+============================== -->
+
+<footer>
+
+    <div class="container footer-content">
+
+        <div>
+            © 2026 Kenoue Landry. Tous droits réservés.
+        </div>
+
+        <div>
+            Graphic Designer
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- ==============================
+     BOUTON WHATSAPP
+============================== -->
+
+<a
+    class="whatsapp"
+    href="https://wa.me/237680523125"
+    target="_blank"
+    aria-label="Contacter Kenoue Landry sur WhatsApp"
+>
+    ☎
+</a>
+
+
+
+<!-- ==============================
+     JAVASCRIPT
+============================== -->
+
+<script>
+
+
+    /* ==============================
+       MENU MOBILE
+    ============================== */
+
+    function toggleMenu() {
+
+        const menu =
+            document.getElementById("nav-menu");
+
+        menu.classList.toggle("show");
+
+    }
+
+
+
+    /* ==============================
+       FERMER LE MENU
+       APRÈS UN CLIC
+    ============================== */
+
+    document
+        .querySelectorAll("#nav-menu a")
+        .forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                document
+                    .getElementById("nav-menu")
+                    .classList.remove("show");
+
+            });
+
+        });
+
+
+
+    /* ==============================
+       FILTRE PORTFOLIO
+    ============================== */
+
+    function filterProjects(category, button) {
+
+        const projects =
+            document.querySelectorAll(".project");
+
+        const buttons =
+            document.querySelectorAll(".filter-btn");
+
+
+        buttons.forEach(btn => {
+
+            btn.classList.remove("active");
+
+        });
+
+
+        button.classList.add("active");
+
+
+        projects.forEach(project => {
+
+            if (
+                category === "all" ||
+                project.dataset.category === category
+            ) {
+
+                project.style.display = "block";
+
+            } else {
+
+                project.style.display = "none";
+
+            }
+
+        });
+
+    }
+
+</script>
+
+
+</body>
+</html>
